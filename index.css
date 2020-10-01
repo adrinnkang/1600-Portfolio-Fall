@@ -9,7 +9,12 @@ body {
 
 nav {
     background-color: cornflowerblue;
+    display: flex;
+    justify-content: flex-end;
+
 }
+
+
 
 .project-tile img {
     width: 200px;
