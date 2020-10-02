@@ -1,0 +1,104 @@
+body {
+    background-color: #a6c2e6;
+    width: 970px;
+    padding: 15px;
+    margin: 0 auto;
+    font-family: verdana;
+    color: #193b65;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  
+  #bio {
+    display: flex;
+  }
+  
+  #bio img {
+    max-height: 200px;
+    margin: 7px 7px 5px 0;
+  }
+  
+  #name-date {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0px 6px 6px;
+    margin: 3px 0 3px 3px;
+    width: 754px;
+    height: 32px;
+  }
+  
+  #name-date h2 {
+    margin: 0px;
+    font-size: 1.5em;
+  }
+  
+  #learn {
+    background-color: #bbdbd9;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 7px 0 0 9px;
+    margin: 3px 0 0 7px;
+  }
+  
+  #learn p {
+    margin: 2px 1px;
+  }
+  
+  .p-color {
+    color: #00757a;
+  }
+  
+  #tech {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(187, 219, 217);
+  }
+  
+  figure img {
+    max-height: 150px;
+  }
+  
+  figure {
+    margin: 1.8em 0;
+    text-align: center;
+  }
+  
+  figcaption {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 149px;
+    height: 48px;
+    padding: 0.5px;
+    font-size: smaller;
+    text-align: center;
+    position: relative;
+    top: -20px;
+  }
+  
+  #ai {
+    width: 154px;
+  }
+  
+  #excited {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  #excited-learn {
+    background-color: #bbdbd9;
+    color: black;
+    padding: 5px 10px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: smaller;
+  }
+  
