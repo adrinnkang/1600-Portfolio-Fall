@@ -3,20 +3,53 @@
     padding:0;
 }
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
 body {
     background-color: cadetblue;
 }
 
-nav {
-    background-color: cornflowerblue;
+#navbar {
     display: flex;
     justify-content: flex-end;
+    background-color: cornflowerblue;
 
 }
 
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    margin-right: 2rem;
+}
 
+.nav-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 2rem;
+    color: navy;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    background: white;
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .project-tile img {
-    width: 200px;
+    width: 20rem;
 
+}
+
+h1 {
+    font-size: 3rem;
 }
