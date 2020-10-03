@@ -40,10 +40,29 @@ body {
 
 #welcome-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: black;
+    background-image: linear-gradient(62deg, #44678a 0%, #181719 100%);
 }
+
+.projects-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: #45567d;
+  }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
 
 .project-tile img {
     width: 20rem;
