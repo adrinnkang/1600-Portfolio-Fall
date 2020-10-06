@@ -34,7 +34,7 @@ body {
 .nav-list {
     display: flex;
     list-style-type: none;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .nav-list a {
@@ -54,6 +54,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
     background-color: black;
     background-image: linear-gradient(62deg, #44678a 0%, #181719 100%);
@@ -62,6 +63,7 @@ body {
 .projects-section {
     text-align: center;
     padding: 5rem 2rem;
+    width: 100%;
     background: #45567d;
   }
 
@@ -119,4 +121,16 @@ body {
 
 h1 {
     font-size: 3rem;
+}
+
+@media screen and (max-width: 28.75em) {
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#welcome-section {
+    background-image: linear-gradient(62deg, #44678a 0%, #181719 100%);
+
 }
