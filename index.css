@@ -63,7 +63,7 @@ body {
 .projects-section {
     text-align: center;
     padding: 5rem 2rem;
-    width: 100%;
+    /* width: 100%; */
     background: #45567d;
   }
 
@@ -83,7 +83,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
     height: 80vh;
     padding: 0 2rem;
     background: var(--main-gray);
