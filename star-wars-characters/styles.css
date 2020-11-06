@@ -8,3 +8,13 @@
     justify-content: space-evenly;
     margin: 1rem;
 }
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+figure img {
+    max-height: 12rem;
+}
