@@ -1,7 +1,4 @@
-import { films } from './data/films.js'
-import { people } from './data/people.js'
-
-// console.log(document.body.children)
+import { films } from '../data/films.js'
 
 const main = document.querySelector('main')
 
