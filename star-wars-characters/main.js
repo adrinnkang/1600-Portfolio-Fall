@@ -23,14 +23,24 @@ mainHeader.appendChild(otherButton)
 
 //This filters out the male characters
 const maleCharacters = people.filter(person => person.gender === 'male')
-console.log(maleCharacters)
+
+const femaleCharacters = people.filter(person => person.gender === 'female')
 
 //When you click the male button, it also shows the images
 maleButton.addEventListener('click', (event)  => {
-    maleCharacters.forEach(element => {
+    populateDOM(maleCharacters)
+})
+
+femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
+
+function populateDOM (characters) {
+    removeChildren(mainContent)
+    characters.forEach(element => {
         const charFigure = document.createElement('figure')
         const charImg = document.createElement('img')
-        charImg.src = `https://starwars-visualguide.com/assets/img/characters/1.jpg`
+        let charNum = getLastNumber(element.url)
+        charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+        charImg.addEventListener('error', () => charImg.hidden = true) // error handling genius level)
         const charCaption = document.createElement('figcaption')
         charCaption.textContent = element.name
     
@@ -39,20 +49,22 @@ maleButton.addEventListener('click', (event)  => {
     
         mainContent.appendChild(charFigure)
     })
-})
-
-let theURL = "https://swapi.co/api/people/1/"
-
-function getLastNumber(url) {
-    console.log(url)
 }
 
-getLastNumber(theURL)
+//let theURL = "https://swapi.co/api/people/1/" Our test URL's
+//let theURL2 = "https://swapi.co/api/people/14/" Our test URL's
 
+function getLastNumber(url) {
+    let end = url.lastIndexOf('/')
+    let start = end - 2
+    if (url.charAt(start) === '/') {
+        start++
+    }
+  
+    return url.slice(start, end)
+}
 
-
-//https://starwars-visualguide.com/assets/img/characters/1.jpg
-
-//https://starwars-visualguide.com/assets/img/films/7.jpg
-
-//"url": "https://swapi.co/api/people/1/"
+function removeChildren(container) {
+    while (container.firstChild)
+        container.removeChild(container.firstChild);
+}
