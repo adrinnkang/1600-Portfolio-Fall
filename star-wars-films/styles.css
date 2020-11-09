@@ -1,6 +1,23 @@
 * {
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Star Jedi';
+    
+}
+
+body {
+    background-color: black;
+    background-image: linear-gradient(95deg, #000000 0%, #5664e2 100%);
+    /* #4a58cf */
+}
+
+header {
+    color:rgba(255, 255, 255, 0.884);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1rem;
 }
 
 main {
@@ -10,10 +27,25 @@ main {
 }
 
 figure {
-    margin: 1rem;
+    /* margin: 1rem; */
+    padding: 2rem;
+}
+
+figure img {
+    padding: 1.5rem;
+    background-color: rgb(9, 23, 221);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+
 }
 
 figcaption {
+    color:rgb(202, 202, 202);
     text-align: center;
-    background-color: thistle;
+    font-size: large;
+    background-color: rgb(9, 23, 221);
+    position: relative;
+    top: -25px;
 }
+
+/*     background-color: rgb(113, 113, 190);
+background-color: rgb(9, 23, 221); */
