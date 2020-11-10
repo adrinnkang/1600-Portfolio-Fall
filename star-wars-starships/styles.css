@@ -3,6 +3,9 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Star Jedi';
+}
 .container {
     display: flex;
 }
@@ -15,12 +18,18 @@
 header, footer {
     display: flex;
     justify-content: center;
-    font-size: larger
+}
+
+header {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
 }
 
 a {
     text-decoration: none;
-    font-size: larger;
+    font-size: large;
+    color: rgb(241, 238, 89);
 }
 
 li {
