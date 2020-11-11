@@ -84,6 +84,15 @@ body {
     margin-bottom: 6rem;
   }
 
+  .project-tile img {
+    width: 30rem;
+
+}
+#starwars-image {
+    width: 45rem;
+    height: 22rem;
+}
+
   .contact-section {
     display: flex;
     flex-direction: column;
@@ -121,10 +130,6 @@ body {
     transform: translateY(8px);
   }
 
-.project-tile img {
-    width: 30rem;
-
-}
 
 @media screen and (max-width: 28.75em) {
     .contact-links {
