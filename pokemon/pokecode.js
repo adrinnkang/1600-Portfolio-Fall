@@ -26,7 +26,22 @@ function loadPage() {
 const pokeGrid = document.querySelector('.pokemonGrid')
 
 function populatePokeCard(singlePokemon) {
-    console.log(singlePokemon)
+    let pokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
+    let pokeCard = document.createElement('div')
+    pokeCard.className = 'card'
+    let pokeFront = document.createElement('div')
+    let pokeBack = document.createElement('div')
+
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = singlePokemon.name
+
+
+    pokeFront.appendChild(frontLabel)
+    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(pokeBack)
+    pokeScene.appendChild(pokeCard)
+    pokeGrid.appendChild(pokeScene)
 }
 
 loadPage()
