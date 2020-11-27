@@ -30,18 +30,35 @@ function populatePokeCard(singlePokemon) {
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
+    pokeCard.addEventListener( 'click', function() { // Can use an arrow function here as well, both ways work
+        pokeCard.classList.toggle('is-flipped');
+      }); // Don't need to add the semicolons because of Automatic Semicolon Insertion (ASI), keep it if you want to
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
 
     let frontLabel = document.createElement('p')
     frontLabel.textContent = singlePokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = `../images/pokemon/${getImageFileName(singlePokemon)}.png`
 
+    let backLabel = document.createElement('p')
+    backLabel.textContent = `${singlePokemon.moves.length} moves`
+    pokeBack.appendChild(backLabel)
 
+    pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     pokeCard.appendChild(pokeFront)
     pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
+}
+
+function getImageFileName(pokemon) {
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    } else if (pokemon.id > 9 && pokemon.id < 100) {
+        return `0${pokemon.id}`
+    }
 }
 
 loadPage()
