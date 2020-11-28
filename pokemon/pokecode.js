@@ -33,24 +33,30 @@ function populatePokeCard(singlePokemon) {
     pokeCard.addEventListener( 'click', function() { // Can use an arrow function here as well, both ways work
         pokeCard.classList.toggle('is-flipped');
       }); // Don't need to add the semicolons because of Automatic Semicolon Insertion (ASI), keep it if you want to
-    let pokeFront = document.createElement('div')
-    let pokeBack = document.createElement('div')
 
-    let frontLabel = document.createElement('p')
-    frontLabel.textContent = singlePokemon.name
-    let frontImage = document.createElement('img')
-    frontImage.src = `../images/pokemon/${getImageFileName(singlePokemon)}.png`
+
+    let pokeBack = document.createElement('div')
+    pokeBack.className = 'card__face'
 
     let backLabel = document.createElement('p')
     backLabel.textContent = `${singlePokemon.moves.length} moves`
     pokeBack.appendChild(backLabel)
-
-    pokeFront.appendChild(frontImage)
-    pokeFront.appendChild(frontLabel)
-    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(populateCardFront(singlePokemon))
     pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
+}
+
+function populateCardFront(pokemon) {
+    let pokeFront = document.createElement('div')
+    pokeFront.className = 'card__face'
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = singlePokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = `../images/pokemon/${getImageFileName(singlePokemon)}.png`
+    pokeFront.appendChild(frontImage)
+    pokeFront.appendChild(frontLabel)
+    return pokeFront
 }
 
 function getImageFileName(pokemon) {
