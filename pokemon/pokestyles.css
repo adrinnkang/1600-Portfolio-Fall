@@ -43,6 +43,16 @@ header {
   backface-visibility: hidden;
 }
 
+.card__face--front {
+  background: red;
+}
+
+.card__face--back {
+  background: blue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
   .card.is-flipped {
     transform: rotateY(180deg);
   }
