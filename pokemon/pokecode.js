@@ -12,7 +12,7 @@ async function getAPIData(url) {
 
 // Now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=800`).then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then //?limit=25&offset=800
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -24,6 +24,20 @@ function loadPage() {
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('.load')
+const newPokemonButton = document.querySelector('.newPokemon')
+
+newPokemonButton.addEventListener('click', () => {
+    let pokeName = prompt('What is your new Pokemon name?')
+    let newPokemon = new Pokemon(pokeName, 400, 200, ['gorge', 'sleep'])
+    console.log(newPokemon)
+})
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.hidden = true
+    //loadButton.disabled = true
+})
 
 function populatePokeCard(singlePokemon) {
     let pokeScene = document.createElement('div')
@@ -56,10 +70,16 @@ function populateCardBack(pokemon) {
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.moves.length} moves`
+    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
 
+function getMovesDetails(pokemonMoves) {
+    const movesURL = pokemonMoves[0].move.url
+    return getAPIData(movesURL).then((data) => data.type.name)
+    
+}
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
@@ -72,7 +92,11 @@ function getImageFileName(pokemon) {
     return `pokeball`
 }
 
-
-
-loadPage()
+function Pokemon(name, height, weight, abilities) {
+    this.name = name
+    this.height = height
+    this.weight = weight
+    this.abilities = abilities
+    this.id = 900
+}
 
