@@ -82,7 +82,7 @@ function populateCardBack(pokemon) {
 
 function getMovesDetails(pokemonMoves) {
     const nonNullMoves = pokemonMoves.filter(async (move) => {
-        if(!move.move) return
+        if (!move.move) return
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
         if ((moveData.acurracy && moveData.power) !== null) {
@@ -90,17 +90,15 @@ function getMovesDetails(pokemonMoves) {
         }
     })
     console.log(nonNullMoves.length)
-
-
     /*     const result = pokemonMoves.reduce(async (acc, move) => {
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
     }) */
 }
 
-    //console.log(move.move)
-    //const movesUrl = pokemonMoves[0].move.url
-    //console.log(getAPIData(movesUrl).then((data) => data.type.name))
+//console.log(move.move)
+//const movesUrl = pokemonMoves[0].move.url
+//console.log(getAPIData(movesUrl).then((data) => data.type.name))
 
 
 function getImageFileName(pokemon) {
