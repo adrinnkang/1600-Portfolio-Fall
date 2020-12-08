@@ -42,12 +42,12 @@ function getSimplifiedSenators(senatorArray) {
         return {
             id: senator.id,
             name: `${senator.first_name}${middleName}${senator.last_name}`,
-            imgURL: `https://govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
             seniority: parseInt(senator.seniority, 10),
             missedVotesPct: senator.missed_votes_pct,
             loyaltyPct: senator.votes_with_party_pct,
             party: senator.party,
-            date_of_birth: senator.date_of_birth
+            date_of_birth: parseInt(senator.date_of_birth, 10)
         }
     })
 }
@@ -81,7 +81,7 @@ function senioritySort() {
 }
 
 
-console.log(mostSeniority, missedVotes, republicans)
+console.log(mostSeniority, missedVotes, republicans ,democrats)
 
 populateSenatorDiv(getSimplifiedSenators(senators))
 
