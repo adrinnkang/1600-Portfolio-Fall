@@ -5,6 +5,14 @@ const senatorGrid = document.querySelector('.senatorGrid')
 const seniorityButton = document.querySelector('#seniorityButton')
 const birthdayButton = document.querySelector('#birthdayButton')
 
+birthdayButton.addEventListener('click', () => {
+    birthdaySort()
+})
+
+seniorityButton.addEventListener('click', () => {
+    senioritySort()
+})
+
 function populateSenatorDiv(simpleSenators) {
     removeChildren(senatorGrid)
     simpleSenators.forEach(senator => {
@@ -34,8 +42,47 @@ function getSimplifiedSenators(senatorArray) {
         return {
             id: senator.id,
             name: `${senator.first_name}${middleName}${senator.last_name}`,
+            imgURL: `https://govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+            seniority: parseInt(senator.seniority, 10),
+            missedVotesPct: senator.missed_votes_pct,
+            loyaltyPct: senator.votes_with_party_pct,
+            party: senator.party,
+            date_of_birth: senator.date_of_birth
         }
     })
 }
 
-populateSenatorDiv(senators)
+const filterSenators = (prop, value) => {
+    return getSimplifiedSenators(senators).filter(senator => {
+        return senator[prop] === value
+    })
+}
+
+const republicans = filterSenators('party', 'R')
+const democrats = filterSenators('party', 'D')
+
+const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator) 
+
+const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator) 
+
+
+function birthdaySort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return a.date_of_birth - b.date_of_birth
+
+    }))
+}
+
+function senioritySort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return a.seniority - b.seniority
+
+    }))
+}
+
+
+console.log(mostSeniority, missedVotes, republicans)
+
+populateSenatorDiv(getSimplifiedSenators(senators))
+
+//console.log(getSimplifiedSenators(senators))

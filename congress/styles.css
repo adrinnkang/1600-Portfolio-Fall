@@ -5,3 +5,8 @@ body {
 header{
     text-align: center;
 }
+
+.senatorGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
