@@ -1,12 +1,101 @@
-body {
-    background-color: gray;
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-header{
+body {
+    background-color: gray;
+    font-family: 'Merienda';
+    margin: 2rem;
+}
+
+header {
     text-align: center;
+    font-size: 1.4rem;
+}
+
+#buttonHeader {
+    margin-top: 1.5rem;
+}
+
+#seniorityButton, #birthdayButton {
+    color: blue;
+    line-height: 2rem;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1rem;
+    /* text-shadow: 1px 1px 1px rgb(26, 102, 243); */
+    border-radius: 10px;
+    /* add a hover effect */
+}
+
+img {
+    padding-top: 1.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/* Add opacity here */
+
+i.fas.fa-republican {
+    color:rgb(231, 26, 26);
+}
+
+i.fas.fa-democrat {
+    color:rgb(33, 81, 236);
+}
+
+i.fas.fa-star {
+    color:rgb(241, 245, 20);
 }
 
 .senatorGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+
+
 }
+
+/* figure out how to apply the card flip properly */
+
+/* .scene {
+    width: 200px;
+    height: 260px;
+    border: 1px solid #CCC;
+    margin: 10px;
+    perspective: 600px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1000ms;
+  transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: red;
+}
+
+.card__face--back {
+  background: blue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  } */
