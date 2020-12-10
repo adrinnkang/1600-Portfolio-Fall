@@ -12,22 +12,26 @@ header {
     margin-bottom: 5px;
 }
 
-
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+img {
+  background-color: gray;
+}
+
 .scene {
-    width: 200px;
-    height: 260px;
+    width: 220px;
+    height: 280px;
     border: 1px solid #CCC;
+    border-radius: 10px;
     margin: 10px;
     perspective: 600px;
   }
 
-  .card {
+.card {
     width: 100%;
     height: 100%;
     transition: transform 1000ms;
@@ -36,7 +40,8 @@ header {
     position: relative;
   }
 
-  .card__face {
+.card__face {
+  border-radius: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -45,6 +50,15 @@ header {
 
 .card__face--front {
   background: red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.frontLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .card__face--back {
