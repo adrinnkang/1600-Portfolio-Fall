@@ -36,6 +36,19 @@ function populateSenatorDiv(simpleSenators) {
     })
 }
 
+// Need to get the values read, but how? 
+/* function populateSenatorCard(simpleSenators) {
+    let senatorScene = document.createElement('div')
+    senatorScene.className = 'scene'
+    let senatorCard = document.createElement('div')
+    senatorCard.className = 'card'
+    senatorCard.addEventListener('click', function () {
+        senatorCard.classList.toggle('is-flipped')
+    })
+    senatorCard.appendChild(populateFrontCard(senator))
+
+} */
+
 function getSimplifiedSenators(senatorArray) {
     return senatorArray.map(senator => {
         let middleName = senator.middleName ? ` ${senator.middleName} ` : ` `
