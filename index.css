@@ -76,6 +76,7 @@ body {
 
 .projects-grid {
     display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 4rem;
     width: 100%;
@@ -90,7 +91,7 @@ body {
 }
 #starwars-image {
     width: 45rem;
-    height: 22rem;
+    height: 22.75rem;
 }
 
   .contact-section {

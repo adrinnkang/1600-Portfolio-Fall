@@ -12,7 +12,7 @@ async function getAPIData(url) {
 
 // Now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then //?limit=25&offset=800
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=0`).then //?limit=25&offset=800
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -90,6 +90,8 @@ function getMovesDetails(pokemonMoves) {
         }
     })
     console.log(nonNullMoves.length)
+
+
     /*     const result = pokemonMoves.reduce(async (acc, move) => {
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
