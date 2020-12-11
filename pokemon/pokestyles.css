@@ -2,24 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'Ketchum'; */
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+button {
+  margin: 10px;
 }
 
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
+}
+
+.frontLabel {
+  position: fixed;
+  left: 10px;
+  backface-visibility: hidden;
+  margin-top: 5px;
 }
 
 img {
   background-color: gray;
+  margin-top: 25px;
 }
 
 .scene {
@@ -27,7 +40,7 @@ img {
     height: 280px;
     border: 1px solid #CCC;
     border-radius: 10px;
-    margin: 10px;
+    margin: 14px;
     perspective: 600px;
   }
 
@@ -42,6 +55,7 @@ img {
 
 .card__face {
   border-radius: 10px;
+
   position: absolute;
   width: 100%;
   height: 100%;
@@ -49,20 +63,14 @@ img {
 }
 
 .card__face--front {
-  background: red;
+  background: #FFDE00;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.frontLabel {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 .card__face--back {
-  background: blue;
+  background: #3B4CCA;
   color: white;
   transform: rotateY(180deg);
 }
