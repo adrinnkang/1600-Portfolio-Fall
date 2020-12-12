@@ -34,7 +34,8 @@ newPokemonButton.addEventListener('click', () => {
         400,
         200,
         ['gorge', 'sleep', 'cough'],
-        ['eat', 'study', 'code'])
+        ['eat', 'study', 'code'],
+        70)
     populatePokeCard(newPokemon)
 })
 
@@ -66,8 +67,12 @@ function populateCardFront(pokemon) {
     frontLabel.className = 'frontLabel'
     let frontImage = document.createElement('img')
     frontImage.src = `../images/pokemon/${getImageFileName(pokemon)}.png`
+    let frontType = document.createElement('p')
+    frontType.textContent = `${pokemon.types} Figure out how to put Type here`
+    frontType.className = 'frontType'
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
+    pokeFront.appendChild(frontType)
     return pokeFront
 }
 
@@ -76,8 +81,14 @@ function populateCardBack(pokemon) {
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.moves.length} moves`
-   // backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
+    let backBaseExp = document.createElement('p')
+    backBaseExp.textContent = `Base experience: ${pokemon.base_experience}` 
+    let backWeight = document.createElement('p')
+    backWeight.textContent = `Weight: ${pokemon.weight}`
+//    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
     pokeBack.appendChild(backLabel)
+    pokeBack.appendChild(backBaseExp)
+    pokeBack.appendChild(backWeight)
     return pokeBack
 }
 
@@ -93,7 +104,7 @@ function getMovesDetails(pokemonMoves) {
     console.log(nonNullMoves.length)
 
 
-    /*     const result = pokemonMoves.reduce(async (acc, move) => {
+    /*  const result = pokemonMoves.reduce(async (acc, move) => {
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
     }) */
@@ -115,12 +126,13 @@ function getImageFileName(pokemon) {
     return `pokeball`
 }
 
-function Pokemon(name, height, weight, abilities, moves) {
+function Pokemon(name, height, weight, abilities, moves, base_experience) {
     this.name = name
     this.height = height
     this.weight = weight
     this.abilities = abilities
     this.id = 900
     this.moves = moves
+    this.base_experience = base_experience
 }
 

@@ -12,8 +12,15 @@ header {
     margin-top: 20px;
     margin-bottom: 15px;
 }
+
 button {
   margin: 10px;
+  line-height: 2rem;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1rem;
+  /* text-shadow: 1px 1px 1px rgb(26, 102, 243); */
+  border-radius: 10px;
 }
 
 .pokemonGrid {
@@ -31,7 +38,7 @@ button {
 }
 
 img {
-  background-color: gray;
+  background-color: rgb(63, 63, 63);
   margin-top: 25px;
 }
 
@@ -55,7 +62,6 @@ img {
 
 .card__face {
   border-radius: 10px;
-
   position: absolute;
   width: 100%;
   height: 100%;
@@ -73,6 +79,10 @@ img {
   background: #3B4CCA;
   color: white;
   transform: rotateY(180deg);
+}
+
+.card__face--back p {
+  margin:10px;
 }
 
 .card.is-flipped {
