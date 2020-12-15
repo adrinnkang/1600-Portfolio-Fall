@@ -3,13 +3,20 @@
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Ketchum'; */
+
+}
+
+body {
+  background-color: #526B2D;
+  /* #526B2D; */
 }
 
 header {
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
@@ -39,6 +46,7 @@ button {
 
 img {
   background-color: rgb(63, 63, 63);
+  /* add a gradient behind the images? */
   margin-top: 25px;
 }
 
