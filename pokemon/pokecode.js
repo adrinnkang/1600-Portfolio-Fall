@@ -98,6 +98,7 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(backLabel)
     pokeBack.appendChild(backBaseExp)
     pokeBack.appendChild(backWeight)
+    getAbilityDetails(pokemon.abilities[0].url)
     return pokeBack
 }
 
@@ -112,7 +113,6 @@ function getMovesDetails(pokemonMoves) {
     })
     console.log(nonNullMoves.length)
 
-
     /*  const result = pokemonMoves.reduce(async (acc, move) => {
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
@@ -123,6 +123,11 @@ function getMovesDetails(pokemonMoves) {
 //const movesUrl = pokemonMoves[0].move.url
 //console.log(getAPIData(movesUrl).then((data) => data.type.name))
 
+function getAbilityDetails(url) {
+    getAPIData(url).then((details) => {
+        console.log(details)
+    })
+}
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
