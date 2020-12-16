@@ -98,7 +98,7 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(backLabel)
     pokeBack.appendChild(backBaseExp)
     pokeBack.appendChild(backWeight)
-    getAbilityDetails(pokemon.abilities[0].url)
+    getAbilityDetails(pokemon.abilities[0].ability.url)
     return pokeBack
 }
 
