@@ -29,7 +29,6 @@ body {
 }
 
 #navbar {
-
     display: flex;
     justify-content: flex-end;
     background-color: #354746;
