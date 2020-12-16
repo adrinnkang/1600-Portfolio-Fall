@@ -68,12 +68,21 @@ function populateCardFront(pokemon) {
     let frontImage = document.createElement('img')
     frontImage.src = `../images/pokemon/${getImageFileName(pokemon)}.png`
     let frontType = document.createElement('p')
-    frontType.textContent = pokemon.types[0].type.name + ` ` + pokemon.types[1].type.name
+    frontType.textContent = getTypeString(pokemon.types)
+    // pokemon.types[0].type.name + ` ` + pokemon.types[1].type.name
     frontType.className = 'frontType'
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     pokeFront.appendChild(frontType)
     return pokeFront
+}
+
+function getTypeString(types) {
+    let typeString = ''
+    for (const type of types) {
+        typeString = typeString + type.type.name
+    }
+    return typeString
 }
 
 function populateCardBack(pokemon) {
