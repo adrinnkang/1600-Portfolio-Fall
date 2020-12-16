@@ -39,7 +39,7 @@ button {
 
 .frontLabel {
   position: fixed;
-  left: 10px;
+  left: 22px;
   backface-visibility: hidden;
   margin-top: 5px;
 }
