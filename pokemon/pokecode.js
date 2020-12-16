@@ -71,16 +71,24 @@ function populateCardFront(pokemon) {
     frontType.textContent = getTypeString(pokemon.types)
     // pokemon.types[0].type.name + ` ` + pokemon.types[1].type.name
     frontType.className = 'frontType'
+    let frontWeight = document.createElement('p')
+    frontWeight.textContent = `Weight: ${pokemon.weight}`
+    frontWeight.className = 'frontWeight'
+    let frontHeight = document.createElement('p')
+    frontHeight.textContent = `Height: ${pokemon.height}`
+
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     pokeFront.appendChild(frontType)
+    pokeFront.appendChild(frontWeight)
+    pokeFront.appendChild(frontHeight)
     return pokeFront
 }
 
 function getTypeString(types) {
     let typeString = ''
     for (const type of types) {
-        typeString = typeString + type.type.name + ' '
+        typeString = typeString + type.type.name + ', '
     }
     return typeString
 }
@@ -92,13 +100,15 @@ function populateCardBack(pokemon) {
     backLabel.textContent = `${pokemon.moves.length} moves`
     let backBaseExp = document.createElement('p')
     backBaseExp.textContent = `Base experience: ${pokemon.base_experience}` 
-    let backWeight = document.createElement('p')
-    backWeight.textContent = `Weight: ${pokemon.weight}`
 //    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
+
+/*     let backAbilityDetails = document.createElement('p')
+    backAbilityDetails.className ='backAbilityDetails'
+    backAbillityDetails.textContent = getAbilityDetails(pokemon.abilities[0].ability.url, abilityElement) */
+
     pokeBack.appendChild(backLabel)
     pokeBack.appendChild(backBaseExp)
-    pokeBack.appendChild(backWeight)
-    getAbilityDetails(pokemon.abilities[0].ability.url)
+    // pokeBack.appendChild(backAbilityDetails)
     return pokeBack
 }
 
@@ -117,18 +127,20 @@ function getMovesDetails(pokemonMoves) {
         const moveData = await getAPIData(move.move.url)
         console.log(moveData.accuracy, moveData.power)
     }) */
+
+    //console.log(move.move)
+    //const movesUrl = pokemonMoves[0].move.url
+    //console.log(getAPIData(movesUrl).then((data) => data.type.name))
+
 }
 
-//console.log(move.move)
-//const movesUrl = pokemonMoves[0].move.url
-//console.log(getAPIData(movesUrl).then((data) => data.type.name))
-
-function getAbilityDetails(url) {
+/* function getAbilityDetails(url, abilityElement) {
     getAPIData(url).then((details) => {
-        console.log(details)
+        abilityElement.textContent = details.effect.effect_entries[0].short_effect
     })
+    return (getAbilityDetails(url, abilityElement))
 }
-
+ */
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
         return `00${pokemon.id}`

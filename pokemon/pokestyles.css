@@ -44,6 +44,18 @@ button {
   margin-top: 5px;
 }
 
+.frontType {
+  position: fixed;
+  right: 1px;
+  backface-visibility: hidden;
+  margin-top: 5px;
+}
+
+.frontWeight {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
 img {
   background-color: rgb(63, 63, 63);
   /* add a gradient behind the images? */
