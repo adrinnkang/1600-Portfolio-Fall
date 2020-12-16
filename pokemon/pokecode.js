@@ -88,7 +88,7 @@ function populateCardFront(pokemon) {
 function getTypeString(types) {
     let typeString = ''
     for (const type of types) {
-        typeString = typeString + type.type.name + ', '
+        typeString = typeString + type.type.name + ' '
     }
     return typeString
 }
