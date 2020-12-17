@@ -67,7 +67,7 @@ h1 {
 h2 {
   font-family: 'Shadows Into Light', 'Arial';
   font-size: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 8.9rem;
 }
 
 #welcome-section {
@@ -83,7 +83,7 @@ h2 {
 
 .projects-section {
     text-align: center;
-    padding: 10rem 2rem;
+    padding: 10rem 3rem;
     /* width: 100%; */
     background: #6A898C;
 }
