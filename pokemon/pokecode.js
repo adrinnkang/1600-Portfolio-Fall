@@ -108,7 +108,7 @@ function populateCardBack(pokemon) {
 
     pokeBack.appendChild(backLabel)
     pokeBack.appendChild(backBaseExp)
-    // pokeBack.appendChild(backAbilityDetails)
+    // pokeBack.appendChild(backAbilityDetails(url, abilityElement))
     return pokeBack
 }
 
@@ -136,7 +136,7 @@ function getMovesDetails(pokemonMoves) {
 
 /* function getAbilityDetails(url, abilityElement) {
     getAPIData(url).then((details) => {
-        abilityElement.textContent = details.effect.effect_entries[0].short_effect
+        abilityElement.textContent = details.effect.effect_entries[0].effect
     })
     return (getAbilityDetails(url, abilityElement))
 }
