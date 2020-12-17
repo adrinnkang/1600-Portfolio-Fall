@@ -31,7 +31,7 @@ newPokemonButton.addEventListener('click', () => {
     let pokeName = prompt('What is your new Pokemon name?')
     let newPokemon = new Pokemon(
         pokeName,
-        10,
+        7,
         75,
         [
             {
