@@ -207,3 +207,45 @@ figcaption {
 
   }
 }
+
+@media screen and (max-width: 414px) {
+
+  .nav-list a {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  #coding-journey {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1.5rem;
+  }
+
+  .project-tile img {
+    width: 25rem;
+  }
+
+  #starwars-image {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  #pokeimage {
+    height: 20rem;
+  }
+
+
+  .contact-details {
+    font-size: 1.75rem;
+
+  }
+}
