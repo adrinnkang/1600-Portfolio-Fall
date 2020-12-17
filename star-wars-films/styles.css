@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: "Star Jedi";
-    src: url(https://www.dafont.com/star-jedi.font);
+    src: url(star_jedi) format("ttf");
   }
 
 body {

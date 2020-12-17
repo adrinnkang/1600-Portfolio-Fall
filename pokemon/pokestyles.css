@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "Ketchum";
-  src: url(https://www.dafont.com/ketchum.font);
+  src: url(ketchum) format("otf");
 }
 
 header {

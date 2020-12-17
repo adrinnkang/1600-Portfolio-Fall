@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Death Star";
-    src: url(https://www.dafont.com/death-star.font);
+    src: url(death_star) format("oft"); 
   }
 
 .mainHeader {
