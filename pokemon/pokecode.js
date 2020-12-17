@@ -31,11 +31,40 @@ newPokemonButton.addEventListener('click', () => {
     let pokeName = prompt('What is your new Pokemon name?')
     let newPokemon = new Pokemon(
         pokeName,
-        400,
-        200,
-        ['gorge', 'sleep', 'cough'],
+        10,
+        75,
+        [
+            {
+                ability: {
+                    name: 'night vision',
+                },
+            },
+            {
+                ability: {
+                    name: 'sleep',
+                },
+            },
+            {
+                ability: {
+                    name: 'dream',
+                },
+            },
+        ],
         ['eat', 'study', 'code'],
-        70)
+        70,
+        [
+            {
+                type: {
+                    name: 'dark',
+                },
+            },
+            {
+                type: {
+                    name: 'fairy',
+                },
+            },
+        ],
+    )
     populatePokeCard(newPokemon)
 })
 
@@ -99,15 +128,24 @@ function populateCardBack(pokemon) {
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.moves.length} moves`
     let backBaseExp = document.createElement('p')
-    backBaseExp.textContent = `Base experience: ${pokemon.base_experience}` 
-//    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
+    backBaseExp.textContent = `Base experience: ${pokemon.base_experience}`
+    let backAbilities = document.createElement('ul')
+    backAbilities.textContent = `Abilities:`
+    pokemon.abilities.forEach(pokeAbility => {
+        let oneAbility = document.createElement('li')
+        oneAbility.textContent = pokeAbility.ability.name
+        backAbilities.appendChild(oneAbility)
+        console.log(pokeAbility.ability.url)
+    })
+    //  backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
 
-/*     let backAbilityDetails = document.createElement('p')
-    backAbilityDetails.className ='backAbilityDetails'
-    backAbillityDetails.textContent = getAbilityDetails(pokemon.abilities[0].ability.url, abilityElement) */
+    /*  let backAbilityDetails = document.createElement('p')
+        backAbilityDetails.className ='backAbilityDetails'
+        backAbillityDetails.textContent = getAbilityDetails(pokemon.abilities[0].ability.url, abilityElement) */
 
     pokeBack.appendChild(backLabel)
     pokeBack.appendChild(backBaseExp)
+    pokeBack.appendChild(backAbilities)
     // pokeBack.appendChild(backAbilityDetails(url, abilityElement))
     return pokeBack
 }
@@ -152,7 +190,7 @@ function getImageFileName(pokemon) {
     return `pokeball`
 }
 
-function Pokemon(name, height, weight, abilities, moves, base_experience) {
+function Pokemon(name, height, weight, abilities, moves, base_experience, types) {
     this.name = name
     this.height = height
     this.weight = weight
@@ -160,5 +198,6 @@ function Pokemon(name, height, weight, abilities, moves, base_experience) {
     this.id = 900
     this.moves = moves
     this.base_experience = base_experience
+    this.types = types
 }
 

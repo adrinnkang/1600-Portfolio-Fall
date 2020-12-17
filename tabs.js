@@ -1,10 +1,12 @@
 const charTab = document.querySelector('.characters')
 const filmsTab = document.querySelector('.films')
 const shipsTab = document.querySelector('.starships')
+const welcomeBox = document.querySelector('.welcome')
 
 const mainFrame = document.querySelector('.mainFrame')
 
 charTab.addEventListener('click', () => {
+    welcomeBox.style.setProperty("display", "none")
     charTab.classList.toggle("is-active")
     filmsTab.classList.remove("is-active")
     shipsTab.classList.remove("is-active")

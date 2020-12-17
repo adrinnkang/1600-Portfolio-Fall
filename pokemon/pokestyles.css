@@ -3,24 +3,26 @@
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Ketchum'; */
-
 }
 
-body {
-  background-color: #526B2D;
-  /* #526B2D; */
+@font-face {
+  font-family: "Ketchum";
+  src: url(https://www.dafont.com/ketchum.font);
 }
 
 header {
     color: white;
+    font-size: large;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 15px;
+    font-family: 'Ketchum', sans-serif;
 }
 
 button {
+  font-family: sans-serif;
   margin: 10px;
   line-height: 2rem;
   padding: 0 20px;
@@ -28,6 +30,12 @@ button {
   font-size: 1rem;
   /* text-shadow: 1px 1px 1px rgb(26, 102, 243); */
   border-radius: 10px;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #526B2D;
+  /* #526B2D; */
 }
 
 .pokemonGrid {
@@ -46,7 +54,7 @@ button {
 
 .frontType {
   position: fixed;
-  right: 1px;
+  right: 22px;
   backface-visibility: hidden;
   margin-top: 5px;
 }
@@ -102,7 +110,20 @@ img {
 }
 
 .card__face--back p {
-  margin:10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+li {
+  position: relative;
+  left: 22px;
+  padding: 10px;
+}
+
+ul {
+  position: relative;
+  left: 22px;
+  padding-top: 10px;
 }
 
 .card.is-flipped {

@@ -1,9 +1,14 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Star Jedi';
+    font-family: 'Star Jedi', Verdana;
     
 }
+
+@font-face {
+    font-family: "Star Jedi";
+    src: url(https://www.dafont.com/star-jedi.font);
+  }
 
 body {
     background-color: black;

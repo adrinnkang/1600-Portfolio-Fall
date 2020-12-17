@@ -3,8 +3,13 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Star Jedi";
+    src: url(https://www.dafont.com/star-jedi.font);
+  }
+
 body {
-    font-family: 'Star Jedi';
+    font-family: 'Star Jedi', Verdana;
 }
 .container {
     display: flex;
