@@ -10,14 +10,11 @@ html {
     font-size: 70.75%;
 }
 
-h1 {
-    font-size: 4rem;
-}
-
 #coding-journey {
     font-family: 'Montserrat', 'Lucida Sans';
     margin: 5px;
 }
+
 a {
     text-decoration: none;
     color: whitesmoke;
@@ -89,7 +86,7 @@ h2 {
     padding: 10rem 2rem;
     /* width: 100%; */
     background: #6A898C;
-  }
+}
 
 #projects {
   font-family: 'Montserrat', 'Ludica Sans';
@@ -111,7 +108,11 @@ h2 {
     max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 6rem;
-  }
+}
+
+figcaption {
+  font-size: 1.60rem;
+}
 
 .project-tile img {
     width: 30rem;
@@ -126,7 +127,7 @@ h2 {
   height: 22.75rem;
 }
 
-  .contact-section {
+.contact-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,43 +137,73 @@ h2 {
     height: 80vh;
     padding: 4rem 2rem;
     background: #A59772;
-  }
+}
 
-  .contact-links {
+.contact-links {
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 980px;
     margin-top: 4rem;
     flex-wrap: wrap;
-  }
+}
 
-  .btn {
+.btn {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 2px;
-  }
+}
 
-  .contact-details {
+.contact-details {
     font-family: 'Montserrat';
     font-size: 2.4rem;
     text-shadow: 2px 2px 1px #6A898C;
     transition: transform 0.3s ease-out;
-  }
+}
   
-  .contact-details:hover {
+.contact-details:hover {
     transform: translateY(8px);
+}
+
+
+@media screen and (max-width: 375px) {
+
+  .nav-list a {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  #coding-journey {
+    font-size: 1.5rem;
+  }
+
+  figcaption {
+    font-size: 1.5rem;
+  }
+
+  .project-tile img {
+    width: 25rem;
+  }
+
+  #starwars-image {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  #pokeimage {
+    height: 20rem;
   }
 
 
-@media screen and (max-width: 28.75em) {
-    .contact-links { 
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    .projects-grid {
-      flex-direction: column;
-      align-items: center;
-    }
+  .contact-details {
+    font-size: 1.75rem;
+
+  }
 }
